@@ -131,3 +131,8 @@ function toggleClass(id, className) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+//object deep copy with jquery 
+function cloneObject(obj) {
+    var newObj = jQuery.extend(true, {}, obj);
+    return newObj;
+}
