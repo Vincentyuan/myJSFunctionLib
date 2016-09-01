@@ -136,3 +136,16 @@ function cloneObject(obj) {
     var newObj = jQuery.extend(true, {}, obj);
     return newObj;
 }
+//run a function only once with advanced feature to do 
+function once(fn, context) { 
+	var result;
+
+	return function() { 
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
+
+		return result;
+	};
+}
