@@ -149,3 +149,20 @@ function once(fn, context) {
 		return result;
 	};
 }
+//js get root path of web side 1     
+function getRootPath1() {
+    var strFullPath = window.document.location.href;
+    var strPath = window.document.location.pathname;
+    var pos = strFullPath.indexOf(strPath);
+    var prePath = strFullPath.substring(0, pos);
+    var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+    return (prePath + postPath);
+}
+
+//js js get root path of web side 1    
+function getRootPath() {
+    var pathName = window.location.pathname.substring(1);
+    var webName = pathName == '' ? '' : pathName.substring(0, pathName.indexOf('/'));
+    //return window.location.protocol + '//' + window.location.host + '/'+ webName + '/';
+    return window.location.protocol + '//' + window.location.host + '/' + webName;
+}
