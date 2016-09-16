@@ -71,3 +71,18 @@ Array.prototype.inArray = function (value) {
   }
   return false;
 };
+//delete element in arry 
+/*other function to do this 
+var index = array.indexOf(item);
+array.splice(index, 1);
+*/
+Array.prototype.remove = function() {
+    var what, a = arguments, L = a.length, ax;
+    while (L && this.length) {
+        what = a[--L];
+        while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+        }
+    }
+    return this;
+};
